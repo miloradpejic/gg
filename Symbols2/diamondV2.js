@@ -15,6 +15,62 @@ diamondCanvas_v2.addEventListener('click', function(event) {
 });
 
 
+const DIA_MIDDLE_X = diamondCanvas_v2.width / 2;
+const DIA_MIDDLE_Y = diamondCanvas_v2.height / 2;
+const DIA_QUARTER_Y = diamondCanvas_v2.height / 4;
+
+diamondCanvas_v2.addEventListener('click', function(event) {
+  var rect = diamondCanvas_v2.getBoundingClientRect();
+  var x = event.clientX - rect.left;
+  var y = event.clientY - rect.top;
+  console.log("MiddleX +/-: ", Math.abs((diamondCanvas_v2.width / 2) - x), "MiddleY +/-: ", Math.abs((diamondCanvas_v2.height / 2) - y));
+});
+
+
+// add offsetY to all y values
+
+const DIA_MIDDLE_X = diamondCanvas_v2.width / 2;
+const DIA_MIDDLE_Y = diamondCanvas_v2.height / 2;
+const DIA_QUARTER_Y = diamondCanvas_v2.height / 4;
+
+diamondCanvas_v2.addEventListener('click', function(event) {
+  var rect = diamondCanvas_v2.getBoundingClientRect();
+  var x = event.clientX - rect.left;
+  var y = event.clientY - rect.top;
+  console.log("MiddleX +/-: ", Math.abs((diamondCanvas_v2.width / 2) - x), "MiddleY +/-: ", Math.abs((diamondCanvas_v2.height / 2) - y));
+});
+
+
+// add offsetY to all y values
+
+const DIA_MIDDLE_X = diamondCanvas_v2.width / 2;
+const DIA_MIDDLE_Y = diamondCanvas_v2.height / 2;
+const DIA_QUARTER_Y = diamondCanvas_v2.height / 4;
+
+diamondCanvas_v2.addEventListener('click', function(event) {
+  var rect = diamondCanvas_v2.getBoundingClientRect();
+  var x = event.clientX - rect.left;
+  var y = event.clientY - rect.top;
+  console.log("MiddleX +/-: ", Math.abs((diamondCanvas_v2.width / 2) - x), "MiddleY +/-: ", Math.abs((diamondCanvas_v2.height / 2) - y));
+});
+
+
+// add offsetY to all y values
+
+const DIA_MIDDLE_X = diamondCanvas_v2.width / 2;
+const DIA_MIDDLE_Y = diamondCanvas_v2.height / 2;
+const DIA_QUARTER_Y = diamondCanvas_v2.height / 4;
+
+diamondCanvas_v2.addEventListener('click', function(event) {
+  var rect = diamondCanvas_v2.getBoundingClientRect();
+  var x = event.clientX - rect.left;
+  var y = event.clientY - rect.top;
+  console.log("MiddleX +/-: ", Math.abs((diamondCanvas_v2.width / 2) - x), "MiddleY +/-: ", Math.abs((diamondCanvas_v2.height / 2) - y));
+});
+
+
+// add offsetY to all y values
+
 // add offsetY to all y values
 function drawDiamondV2(ctx5, offsetY) {
 
