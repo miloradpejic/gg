@@ -7,27 +7,12 @@ function drawCherriesV2(ctx, offsetY = 0) {
   const MIDDLE_X = cherryV2Canvas.width / 2;
   const MIDDLE_Y = cherryV2Canvas.height / 2;
 
-  //Gradients
-  const LEAF_GRADIENT = ctx.createRadialGradient(
-    160,
-    10 + offsetY,
-    1,
-    160,
-    90 + offsetY,
-    90
-  );
+
   LEAF_GRADIENT.addColorStop(0, "rgba(255, 255, 255, 0.7)");
   LEAF_GRADIENT.addColorStop(0.2, "#02b002");
   LEAF_GRADIENT.addColorStop(1, "#01360b");
 
-  const LEFT_CHERRY_GRADIENT = ctx.createRadialGradient(
-    65,
-    75 + offsetY,
-    1,
-    90,
-    75 + offsetY,
-    40
-  );
+sadada
 
   LEFT_CHERRY_GRADIENT.addColorStop(0, "rgba(242, 136, 157, 1)");
   LEFT_CHERRY_GRADIENT.addColorStop(0.5, "#D2042D");
