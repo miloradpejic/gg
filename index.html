@@ -1,11 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    first
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="icon" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style/portait.css">
+    <title>Slot - Fruit Frenzy</title>
+  </head>
+  <body>
+    <style>
+      .font-preload {
+        font-family: 'Lilita One';
+        position: absolute;
+        visibility: hidden;
+      }
+    </style>
+    <div class="font-preload">.</div>
+    <div class="containerCont">
+      <canvas
+        id="background-canvas"
+        style="position: absolute; top: 0; left: 0; z-index: -1;"
+      ></canvas>
+    <div class="container">
+      <div class="singleElements">
+        <div
+          class="diamondCanvasContainer"
+          style="display: flex; justify-content: center"
+        >
+          <canvas
+            id="diamond-canvas"
+            style="border: 1px solid rgba(255, 255, 255, 0.25)"
+          ></canvas>
+        </div>
+        <div
+          class="cherryCanvasContainer"
+          style="display: flex; justify-content: center"
+        >
+          <canvas
+            id="cherry-canvas"
+            style="border: 1px solid rgba(255, 255, 255, 0.25)"
+          ></canvas>
+        </div>
+        <div
+          class="scatterCanvasContainer"
+          style="display: flex; justify-content: center"
+        >
+          <canvas
+            id="scatter-canvas"
+            style="border: 1px solid rgba(255, 255, 255, 0.25)"
+          ></canvas>
+        </div>
+        <div
+          class="diamondV2Canvas"
+          style="display: flex; justify-content: center"
+        >
+          <canvas
+            id="diamond-v2-canvas"
+            style="border: 1px solid rgba(255, 255, 255, 0.25)"
+          ></canvas>
+        </div>
+        <div
+          class="orangeCanvasContainer"
+          style="display: flex; justify-content: center"
+        >
+          <canvas
+            id="orange-canvas"
+            style="border: 1px solid rgba(255, 255, 255, 0.25)"
+          ></canvas>
+        </div>
+        <div
+          class="grapeCanvasContainer"
+          style="display: flex; justify-content: center"
+        >
+          <canvas
+            id="grape-canvas"
+            style="border: 1px solid rgba(255, 255, 255, 0.25)"
+          ></canvas>
+        </div>
+        <div
+          class="watermelonCanvasContainer"
+          style="display: flex; justify-content: center"
+        >
+          <canvas
+            id="watermelon-canvas"
+            style="border: 1px solid rgba(255, 255, 255, 0.25)"
+          ></canvas>
+        </div>
+        <div class="cherryV2Canvas">
+          <canvas
+            id="cherry-v2-canvas"
+            style="border: 1px solid rgba(255, 255, 255, 0.25)"
+          ></canvas>
+        </div>
+        <div class="sevenCanvas">
+          <canvas
+            id="seven-canvas"
+            style="border: 1px solid rgba(255, 255, 255, 0.25)"
+          ></canvas>
+        </div>
+        <div class="scatterV2Canvas">
+          <canvas
+            id="scatter-v2-canvas"
+            style="border: 1px solid rgba(255, 255, 255, 0.25)"
+          ></canvas>
+        </div>
+        <div class="parrotCanvas">
+          <canvas
+            id="parrot-canvas"
+            style="border: 1px solid rgba(255, 255, 255, 0.25)"
+          ></canvas>
+        </div>
+      </div>
+      <div class="elementsCanvasContainer">
+        <canvas
+          id="elements-canvas"
+          style="border: 1px solid rgba(255, 255, 255, 0.25); background-color: white;"
+        ></canvas>
+      </div>
+
+    </div>
+
+    <div class="blurredContainer">
+      <canvas
+      id="blurred-elements-canvas"
+      style="border: 1px solid rgba(255, 255, 255, 0.25); background-color: transparent;"
+      ></canvas>
+    </div>
+    <div class="game-container">
+      <canvas
+        id="game-canvas"
+      ></canvas>
+      <canvas
+        id="win-canvas"
+      ></canvas>
+    </div>
+    <div class="line-info">START NEW GAME</div>
+    <div class="mobile-btns">
+        <div class="mobile-container">
+          <button class="mobile-auto">AUTO</button>
+            <div class="spin-btns">
+              <button class="mobile-start-button"><i class="fa fa-refresh"></i></button>
+              <button class="mobile-stop-button"><i class="fa fa-stop-circle-o"></i></button>
+              <button class="mobile-collect-button"><i class="fa fa-arrow-down"></i></button>
+            </div>
+            <button class="mobile-bet">BET</button>
+        </div>
+    </div>
+    <div class="gameUI">
+      <div class="mobile-misc-menu">
+            <button class="mobile-misc-menu-btn fa fa-bars"></button>
+      </div>
+      <div class="misc-buttons">
+        <button class="volume-btn"><i class="fa fa-volume-up"></i></button>
+        <button class="info-btn"><i class="fa fa-info"></i></button>
+        <button class="fullscreen-btn"><i class="fa fa-arrows-alt"></i></button>
+      </div>
+      <div class="info-container">
+        <div class="info-container-section " id="credits-container">
+          <ul>
+            <li><span class="credit-text">CREDITS</span></li>
+            <li><span class="credit-value">2000.00</span></li>
+          </ul>
+        </div>
+        <div class="info-container-section " id="win-container">
+          <ul>
+            <li><span class="win-text">WIN</span></li>
+            <li><span class="win-value">0</span></li>
+          </ul>
+        </div>
+        <div class="info-container-section" id="bet-container">
+          <ul>
+            <li><span class="bet-text">BET</span></li>
+            <li><span class="bet-value">1000.00</span></li>
+          </ul>
+    </div>
+      </div>
+      <div class="game-btns">
+        <div class="bet-btns">
+            <div class="bet-btn-holder ">
+              <div class="bet-label middle">FIXED LINES</div>
+              <span class="info-line middle">40</span>
+            </div>
+            <div class="bet-btn-holder">
+              <div class="bet-label middle">BET</div>
+              <div class="bet-btn-wrapper middle">
+                <button class="decrease-bet"><i class="fa fa-minus"></i></button>
+                <div class="bet-text">0.2</div>
+                <button class="increase-bet"><i class="fa fa-plus"></i></button>
+              </div>
+            </div>
+        </div>
+        <div class="extra-btns">
+         <button class="gamble-btn middle">GAMBLE</button>
+         <button class="auto-btn middle">AUTO</button>
+        </div>
+        <div class="btn-start-container">
+          <button id="start-button">START</button>
+          <button id="stop-button">STOP</button>
+          <button id="collect-button">COLLECT</button>
+        </div>
+       
+      </div>
+    </div>
+    <div class="mobile-pop-up">
+          <div class="pop-up-label-menu">
+            <p class="pop-up-label-text">Menu</p>
+          </div>
+          <div class="pop-up-misc">
+            <div class="pop-up-misc-btns">
+              <button class="pop-up-info-btn"><i class="fa fa-info"></i></button>
+              <button class="pop-up-volume-btn"><i class="fa fa-volume-up"></i></button>
+              <button class="pop-up-fullscreen-btn"><i class="fa fa-arrows-alt"></i></button>
+            </div>
+          </div>
+          <div class="pop-up-bet-btns">
+              <div class="pop-up-denomination-value">
+                <p class="pop-up-denomination-value-p">1 CREDIT</p>
+                <div class="pop-up-denomination-value-div">
+                <p class="pop-up-denomination-value-span">0.01&euro;</p>
+                </div>
+              </div>
+              <div class="pop-up-bet-lines-bet">
+                <p class="pop-up-bet-lines-p">FIXED LINES</p>
+                <div class="pop-up-bet-lines-div">
+                <p class="pop-up-bet-lines-span">40</p>
+                </div>
+              </div>
+              <div class="pop-up-bet-btn-holder">
+                <div class="pop-up-bet-label">BET</div>
+                <div class="pop-up-bet-btn-wrapper">
+                  <button class="pop-up-decrease-bet"><i class="fa fa-minus"></i></button>
+                  <div class="pop-up-bet-text">0.2</div>
+                  <button class="pop-up-increase-bet"><i class="fa fa-plus"></i></button>
+                </div>
+              </div>
+          </div>
+          <div class="pop-up-bet-info-container">
+            <p class="pop-up-bet--info-label">TOTAL BET:</p>
+            <p class="pop-up-bet-info-text">0.2</p>
+            <button class="btn-pop-up-close fa fa-close"></button>
+          </div>
+    </div>
+    </div>
+    <script src="./fonts/ui.js"></script>
+    <script src="./fonts/fontsBorders.js"></script>
+    <script src="./backgrounds/background.js"></script>
+    <script src="./Symbols/diamondV2.js"></script>
+    <script src="./Symbols/orange.js"></script>
+    <script src="./Symbols/cherryV2.js"></script>
+    <script src="./Symbols/grapes.js"></script>
+    <script src="./Symbols/watermelon.js"></script>
+    <script src="./Symbols/scatterV2.js"></script>
+    <script src="./Symbols/seven.js"></script>
+    <script src="./Symbols/lemon.js"></script>
+    <script src="./Symbols/parrot.js"></script>
+    <script src="./Symbols/pineapple.js"></script>
+    <script src="./Symbols/elements.js"></script>
+    <script src="./spin.js"></script>
+    <script src="logic.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
