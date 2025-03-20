@@ -14,6 +14,13 @@ diamondCanvas_v2.addEventListener('click', function(event) {
   console.log("MsaiddleX +/-: ", Math.abs((diamondCanvas_v2.width / 2) - x), "MiddleY +/-: ", Math.abs((diamondCanvas_v2.height / 2) - y));
 });
 
+diamondCanvas_v2.addEventListener('click', function(event) {
+  var rect = diamondCanvas_v2.getBoundingClientRect();
+  var x = event.clientX - rect.left;
+  var y = event.clientY - rect.top;
+  console.log("MsaiddleX +/-: ", Math.abs((diamondCanvas_v2.width / 2) - x), "MiddleY +/-: ", Math.abs((diamondCanvas_v2.height / 2) - y));
+});
+
 
 // add offsetY to all y values
 function drawDiamondV2(ctx5, offsetY) {
